@@ -9,13 +9,15 @@ class Solution {
         string ans= "";
         int best= 0;
         // your code here
-        for(int i=0; i<s.size(); i++){
+        int i=s.size()-1;
+        for(; i>=0; i--){
             int num= s[i]-'0';
             if(num&1){
-                if(ans.size()>0)ans.pop_back();
-                ans.push_back(s[i]);
+                break;
             }
         }
+        
+        for(int j=0; j<=i; j++) ans+= s[j];
         return ans;
     }
 };
